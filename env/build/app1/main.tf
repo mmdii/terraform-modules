@@ -32,3 +32,6 @@ module "asg_module" {
     Project     = "MyApp"
   }
 }
+
+
+resource "null_resource" "example" {}
