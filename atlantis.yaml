@@ -2,20 +2,24 @@ version: 3
 
 projects:
   - name: build-app1
-    dir: terraform-modules/env/build/app1
+    # Update the directory here
+    dir: env/build/app1
     workspace: default
     autoplan:
-      when_modified: ["*.tf", "*.tfvars", "modules/**/*.tf", "modules/**/*.tfvars"]
+      when_modified:
+        - "*.tf"
+        - "*.tfvars"
+        - "modules/**/*.tf"
+        - "modules/**/*.tfvars"
       enabled: true
-    workflow: ansible-workflow
-
-workflows:
-  ansible-workflow:
-    plan:
-      steps:
-        - init
-        - plan
-    apply:
-      steps:
-        - apply
-        # - run: ansible-playbook -i ansible-roles/inventory.ini ansible-roles/playbook.yml
+    # workflow: ansible-workflow
+# workflows:
+#   ansible-workflow:
+#     plan:
+#       steps:
+#         - init
+#         - plan
+#     apply:
+#       steps:
+#         - apply
+# - run: ansible-playbook -i ansible-roles/inventory.ini ansible-roles/playbook.yml
