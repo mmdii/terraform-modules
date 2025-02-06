@@ -12,15 +12,14 @@ projects:
         - "modules/**/*.tf"
         - "modules/**/*.tfvars"
       enabled: true
-    workflow: ansible-workflow
-
-workflows:
-  ansible-workflow:
-    plan:
-      steps:
-        - init
-        - plan
-    apply:
-      steps:
-        - apply
-        # - run: ansible-playbook -i ansible-roles/inventory.ini ansible-roles/playbook.yml
+    # workflow: ansible-workflow
+# workflows:
+#   ansible-workflow:
+#     plan:
+#       steps:
+#         - init
+#         - plan
+#     apply:
+#       steps:
+#         - apply
+# - run: ansible-playbook -i ansible-roles/inventory.ini ansible-roles/playbook.yml
